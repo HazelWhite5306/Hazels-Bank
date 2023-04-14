@@ -4,11 +4,23 @@ connection = mysql.connector.connect(user = "root", database = "example", passwo
 
 cursor = connection.cursor()
 
-addData = ("INSERT INTO example (Idstudent, Age, Name) VALUES (4,"Jordan",12)")
+#addData = ("INSERT INTO school (Idstudent, Name, Age) VALUES (4, 'Jordan', 12)")
 
-cursor.execute(addData)
+#cursor.execute(addData)
 
-connection.commit()
+#connection.commit()
+
+testQuery = ("SELECT * FROM example.school")
+
+ 
+
+cursor.execute(testQuery)
+
+ 
+
+for item in cursor:
+
+    print(item)
 
 cursor.close()
 
